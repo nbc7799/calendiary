@@ -3,7 +3,7 @@ import styles from "./login.module.css";
 
 const Login = (props) => {
   return (
-    <h1 className={styles.display}>
+    <div className={styles.display}>
       <div className={styles.loginBox}>
         <div className={styles.title}>Login</div>
         <div className={styles.inputBox}>
@@ -39,7 +39,7 @@ const Login = (props) => {
           <input className={styles.create} type="button" value="Create" />
         </div>
       </div>
-    </h1>
+    </div>
   );
 };
 

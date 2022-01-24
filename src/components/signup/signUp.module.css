@@ -9,7 +9,7 @@
   margin-top: 0;
 }
 
-.loginBox {
+.signBox {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -25,12 +25,12 @@
 .title {
   color: #be90ec;
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   font-size: 36px;
   font-weight: 700;
 }
 
-.inputBox {
+.inputContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,23 +38,29 @@
   width: 100%;
 }
 
-.idBox,
-.passBox {
+.inputBox {
   display: flex;
   position: relative;
   width: 320px;
-  height: 44px;
-  margin: 6px 0;
+  height: 36px;
+  margin: 4px 0;
   padding: 0 10px;
   border-radius: 18px;
   border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.inputContainer input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 18px;
 }
 
 .look {
   display: flex;
   position: absolute;
   right: 10px;
-  top: 10px;
+  top: 5px;
   justify-content: center;
   align-items: center;
   border: none;
@@ -63,42 +69,24 @@
   cursor: pointer;
   background-color: transparent;
 }
-
-.passBox i {
-  position: absolute;
-  font-size: 16px;
-  color: rgba(0, 0, 0, 0.8);
-}
-
 .hiden {
   display: none;
 }
-
-.inputBox input {
-  width: 100%;
+.createAccount {
+  color: white;
+  background-color: #be90ec;
+  padding: 0;
   border: none;
-  outline: none;
-  border-radius: 18px;
+  border-radius: 20px;
+  height: 40px;
+  width: 160px;
+  margin-top: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  position: absolute;
+  bottom: 66px;
 }
 
-.check {
-  display: flex;
-  justify-content: space-between;
-  width: 280px;
-}
-
-.check p {
-  color: rgba(255, 00, 00, 0.54);
-  margin: 0;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.remember {
-  display: flex;
-}
-
-.forgotPass,
 .create {
   background-color: transparent;
   border: none;
@@ -110,29 +98,25 @@
   font-weight: 600;
 }
 
-.login {
-  color: white;
-  background-color: #be90ec;
-  padding: 0;
-  border: none;
-  border-radius: 20px;
-  height: 40px;
-  width: 160px;
-  margin-top: 50px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.goSignup {
+.goLogin {
   display: flex;
   font-size: 12px;
   font-weight: 500;
+  position: absolute;
+  bottom: 16px;
 }
 
-.goSignup p:first-child {
+.goLogin p:first-child {
   color: rgba(112, 112, 112, 54%);
 }
 
-.goSignup p:last-child {
+.goLogin p:last-child {
+  color: rgba(255, 0, 0, 54%);
+}
+
+.error {
+  display: block;
+  width: 56%;
+  font-size: 5px;
   color: rgba(255, 0, 0, 54%);
 }
