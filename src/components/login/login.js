@@ -1,29 +1,57 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./login.module.css";
 
 const Login = () => {
-  let [hidePassword, setHidePassword] = useState(true);
+  const [checkId, setCheckId] = useState("1234");
+  const [checkPass, setCheckPass] = useState("1234");
+  const [hidePassword, setHidePassword] = useState(true);
+  const [loginFail, setLoginFail] = useState(false);
+  const idRef = useRef();
+  const passRef = useRef();
 
-  const hideClick = (e) => {
-    if (hidePassword) {
-      setHidePassword(false);
-      console.log(e);
-    } else if (!hidePassword) {
-      setHidePassword(true);
-      console.log(e);
-    }
+  const showError = () => {
+    console.log("아이디나 비밀번호가 틀립니다");
   };
 
+  const clickLogin = () => {
+    const passValue = passRef.current.value;
+    const idValue = idRef.current.value;
+
+    if (checkId === idValue && checkPass === passValue) {
+      setLoginFail(false);
+      console.log(loginFail);
+      console.log("서버데이터요청");
+      setCheckId("1234");
+      setCheckPass("1234");
+    } else if (!(checkId === idValue) || !(checkPass === passValue)) {
+      setCheckId("1234");
+      setCheckPass("1234");
+      setLoginFail(true);
+
+      console.log(loginFail);
+      showError();
+    }
+    return loginFail;
+  };
+
+  const hideClick = () => {
+    if (hidePassword) {
+      setHidePassword(false);
+    } else if (!hidePassword) {
+      setHidePassword(true);
+    }
+  };
   return (
     <div className={styles.display}>
-      <div className={styles.loginBox}>
+      <div className={`${styles.loginBox} ${loginFail ? styles.error : null}`}>
         <div className={styles.title}>Login</div>
         <div className={styles.inputBox}>
           <div className={styles.idBox}>
-            <input type="text" placeholder="email@gmail.com" />
+            <input ref={idRef} type="text" placeholder="email@gmail.com" />
           </div>
           <div className={styles.passBox}>
             <input
+              ref={passRef}
               type={hidePassword ? "password" : "text"}
               placeholder="password"
             />
@@ -47,7 +75,13 @@ const Login = () => {
             <p>forgot password?</p>
           </button>
         </div>
-        <button type="button" className={styles.login}>
+        {loginFail && (
+          <span className={styles.errorMessage}>
+            아이디 또는 비밀번호가 잘못 입력 되었습니다. <br />
+            아이디와 비밀번호를 정확히 입력해 주세요.
+          </span>
+        )}
+        <button type="button" className={styles.login} onClick={clickLogin}>
           LOGIN
         </button>
         <div className={styles.or}>
