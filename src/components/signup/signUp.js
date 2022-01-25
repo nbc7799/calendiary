@@ -9,9 +9,6 @@ const SignUp = (props) => {
         <div className={styles.title}>Sign Up</div>
         <div className={styles.inputContainer}>
           <div className={styles.inputBox}>
-            <input type="text" placeholder="Name" />
-          </div>
-          <div className={styles.inputBox}>
             <input type="text" placeholder="Email adress" />
           </div>
           <div className={styles.inputBox}>
@@ -40,6 +37,19 @@ const SignUp = (props) => {
         <button type="button" className={styles.createAccount}>
           Create Account
         </button>
+        <div className={styles.or}>
+          <div className={styles.line}></div>
+          <span>or sign up with</span>
+          <div className={styles.line}></div>
+        </div>
+        <div className={styles.logos}>
+          <button>
+            <img src="images/google.png" alt="" />
+          </button>
+          <button>
+            <img src="images/naver.png" alt="" />
+          </button>
+        </div>
         <div className={styles.goLogin}>
           <p>Already have an account? </p>
           <input className={styles.create} type="button" value="Log in" />

@@ -25,15 +25,26 @@ const Login = (props) => {
             <input type="checkbox" />
             <p>remember me</p>
           </div>
-          <input
-            className={styles.forgotPass}
-            type="button"
-            value="forgot password?"
-          />
+          <button className={styles.forgotPass} type="button">
+            <p>forgot password?</p>
+          </button>
         </div>
         <button type="button" className={styles.login}>
           LOGIN
         </button>
+        <div className={styles.or}>
+          <div className={styles.line}></div>
+          <span>or</span>
+          <div className={styles.line}></div>
+        </div>
+        <div className={styles.logos}>
+          <button>
+            <img src="images/google.png" alt="" />
+          </button>
+          <button>
+            <img src="images/naver.png" alt="" />
+          </button>
+        </div>
         <div className={styles.goSignup}>
           <p>Don't have an account? </p>
           <input className={styles.create} type="button" value="Create" />

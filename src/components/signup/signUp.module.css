@@ -16,10 +16,11 @@
   z-index: 100;
   align-items: center;
   width: 500px;
-  height: 420px;
+  height: 440px;
   border-radius: 10%;
   background-color: #ffff;
   box-shadow: 19px 19px 14px -10px rgba(177, 177, 177, 0.23);
+  margin-bottom: 50px;
 }
 
 .title {
@@ -54,6 +55,11 @@
   border: none;
   outline: none;
   border-radius: 18px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.inputContainer input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .look {
@@ -69,22 +75,70 @@
   cursor: pointer;
   background-color: transparent;
 }
+
 .hiden {
   display: none;
 }
+
 .createAccount {
   color: white;
   background-color: #be90ec;
   padding: 0;
   border: none;
   border-radius: 20px;
-  height: 40px;
-  width: 160px;
-  margin-top: 20px;
+  height: 36px;
+  width: 150px;
+  margin-top: 14px;
   font-weight: 600;
   cursor: pointer;
-  position: absolute;
-  bottom: 66px;
+}
+
+.or {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+
+.or span {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.line {
+  height: 1px;
+  width: 70px;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 0 16px;
+}
+
+.logos {
+  display: flex;
+  justify-content: space-around;
+  width: 160px;
+  height: 50px;
+}
+
+.logos button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background-color: transparent;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.logos button:hover {
+  transform: scale(1.15);
+  transition: transform 0.2s;
+}
+
+.logos img {
+  width: 20px;
+  height: 20px;
 }
 
 .create {
@@ -97,13 +151,12 @@
   font-size: 12px;
   font-weight: 600;
 }
-
 .goLogin {
   display: flex;
   font-size: 12px;
   font-weight: 500;
   position: absolute;
-  bottom: 16px;
+  bottom: 4px;
 }
 
 .goLogin p:first-child {
@@ -118,5 +171,5 @@
   display: block;
   width: 56%;
   font-size: 5px;
-  color: rgba(255, 0, 0, 54%);
+  color: rgba(255, 0, 0, 75%);
 }
