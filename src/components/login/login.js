@@ -1,23 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./login.module.css";
 
-const Login = (props) => {
+const Login = () => {
+  let [hidePassword, setHidePassword] = useState(true);
+
+  const hideClick = (e) => {
+    if (hidePassword) {
+      setHidePassword(false);
+      console.log(e);
+    } else if (!hidePassword) {
+      setHidePassword(true);
+      console.log(e);
+    }
+  };
+
   return (
     <div className={styles.display}>
       <div className={styles.loginBox}>
         <div className={styles.title}>Login</div>
         <div className={styles.inputBox}>
           <div className={styles.idBox}>
-            <input type="text" placeholder="Email adress" />
+            <input type="text" placeholder="email@gmail.com" />
           </div>
           <div className={styles.passBox}>
-            <input type="text" placeholder="password" />
-            <button className={styles.look} type="button">
-              <i class="far fa-eye"></i>
-            </button>
-            <button className={styles.hiden}>
-              <i class="far fa-eye-slash"></i>
-            </button>
+            <input
+              type={hidePassword ? "password" : "text"}
+              placeholder="password"
+            />
+            {hidePassword ? (
+              <button className={styles.hide} type="button" onClick={hideClick}>
+                <i class="far fa-eye-slash"></i>
+              </button>
+            ) : (
+              <button className={styles.look} type="button" onClick={hideClick}>
+                <i class="far fa-eye"></i>
+              </button>
+            )}
           </div>
         </div>
         <div className={styles.check}>
