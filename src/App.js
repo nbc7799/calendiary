@@ -4,6 +4,7 @@ import Header from "./components/header/header";
 import Login from "./components/login/login";
 import Main from "./components/main/main";
 import SignUp from "./components/signup/signUp";
+import SuccessSignup from "./components/successSignup/successSignup";
 // import SignUp from "./components/signup/signUp";
 // import SuccessSignup from "./components/successSignup/successSignup";
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Main />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/success" element={<SuccessSignup />} />
       </Routes>
     </div>
   );

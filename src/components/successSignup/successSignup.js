@@ -6,13 +6,8 @@ const SuccessSignup = (props) => {
     <div className={styles.display}>
       <div className={styles.signBox}>
         <div className={styles.title}>Sign Up</div>
-        <div className={styles.circle}>
-          <div className={styles.innerCircle}></div>
-        </div>
-        <p>
-          가입이 성공적으로
-          <br /> 완료됐습니다.
-        </p>
+        <h2 data-text="PRESENT...">PRESENT...</h2>
+        <p>잠시만 기다려주세요..</p>
       </div>
     </div>
   );

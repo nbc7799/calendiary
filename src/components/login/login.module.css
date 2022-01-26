@@ -217,4 +217,5 @@
 
 .goSignup p:last-child {
   color: rgba(255, 0, 0, 54%);
+  text-decoration: none;
 }
