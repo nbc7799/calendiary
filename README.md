@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+1. 프로젝트명 === Calendiary
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+2. 프로젝트 계획 이유
 
-## Available Scripts
+- 평소 구글 캘린더를 이용해 주단위 계획을 세우곤 하는데,
+  일정을 계획하고 기록하는데는 불편함이 거의 없지만, 일정을 마치고 그 일정들을 잘 마무리했는지 어떤점이 부족했는지에 대한
+  피드백을 기록할 만한 기능이 모자르다는 걸 느꼈습니다.
 
-In the project directory, you can run:
+-따라서 기존 캘린더에 하루 일과를 마치고 어떤점이 잘 지켜졌는지 어떤점이 부족했는지에 대한 기록을 할 수 있는 기능들을 추가하고, 비슷한 분류의 일정들을 컬러로 그룹화하여 주단위별로 퍼센테이지로 나타내 어떤 그룹의 활동을 얼만큼 하고 있는지 한눈에 파악하고자 하였습니다.
 
-### `yarn start`
+-또한 주별캘린더에서는 요일별로 날씨를 나타내는 항목을 추가해서 계획을 세우는데 도움을 주었고, 월별캘린더에서는 각 요일별로 일기를 작성할 수 있게 해서 나의 감정 상태를 기록할 수있고 매일매일 주된 감정이 무엇이었는지 한 눈에 파악이 가능합니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. 프로젝트 기능
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1) 로그인 기능
 
-### `yarn test`
+2) 회원가입 기능
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3) 주별 캘린더 작성
 
-### `yarn build`
+4) 월별 캘린더 작성
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5) 요일별 일기 작성
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+6) 요일별 감정 기록
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+7) 일정그룹별 비율 제시
