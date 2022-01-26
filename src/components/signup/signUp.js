@@ -1,6 +1,7 @@
 import styles from "./signUp.module.css";
 
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SignUp = (props) => {
   return (
@@ -52,7 +53,9 @@ const SignUp = (props) => {
         </div>
         <div className={styles.goLogin}>
           <p>Already have an account? </p>
-          <input className={styles.create} type="button" value="Log in" />
+          <Link to="/login">
+            <p className={styles.create}>Log in</p>
+          </Link>
         </div>
       </div>
     </div>

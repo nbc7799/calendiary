@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./login.module.css";
 
 const Login = () => {
@@ -99,7 +100,9 @@ const Login = () => {
         </div>
         <div className={styles.goSignup}>
           <p>Don't have an account? </p>
-          <input className={styles.create} type="button" value="Create" />
+          <Link to="/signup">
+            <p className={styles.create}>create</p>
+          </Link>
         </div>
       </div>
     </div>
