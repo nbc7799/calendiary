@@ -1,6 +1,5 @@
 import "./app.module.css";
 import { Route, Routes } from "react-router-dom";
-import Header from "./components/header/header";
 import Login from "./components/login/login";
 import Main from "./components/main/main";
 import SignUp from "./components/signup/signUp";

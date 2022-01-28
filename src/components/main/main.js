@@ -24,7 +24,7 @@ const Main = (props) => {
 
     //지난달 날짜그려내기
     if (lastDay !== 6) {
-      for (let i = 0; i < 6; i++) {
+      for (let i = 0; i < lastDay + 1; i++) {
         lastDates.unshift(lastDate - i);
       }
     }
@@ -48,7 +48,14 @@ const Main = (props) => {
 
   return (
     <>
-      <Header makeDates={makeDates} month={month} year={year} />
+      <Header
+        makeDates={makeDates}
+        setMonth={setMonth}
+        month={month}
+        year={year}
+        setYear={setYear}
+        date={date}
+      />
       <Body totalDates={totalDates} />
     </>
   );

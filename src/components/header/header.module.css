@@ -31,9 +31,16 @@
   background-color: transparent;
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 1);
+  cursor: pointer;
 }
 
 .now {
   font-size: 16px;
   font-weight: 600;
+}
+
+.pageMove {
+  height: 30px;
+  margin-right: 20px;
+  margin-top: 10px;
 }
