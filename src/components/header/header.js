@@ -2,17 +2,30 @@ import React from "react";
 import styles from "./header.module.css";
 
 const Header = ({ setMonth, setYear, month, year, date }) => {
+  let thisDate = new Date();
+
   const lastMonth = () => {
-    setMonth(month - 1);
+    if (month <= 1) {
+      month = 12;
+      setMonth(month);
+      setYear(year - 1);
+    } else {
+      setMonth(month - 1);
+    }
   };
-  const preMonth = () => {
-    setMonth(month + 1);
+  const nextMonth = () => {
+    if (month >= 12) {
+      month = 1;
+      setMonth(month);
+      setYear(year + 1);
+    } else {
+      setMonth(month + 1);
+    }
   };
 
   const today = () => {
-    const date = new Date();
-    const nowMonth = date.getMonth() + 1;
-    const nowDate = date.getDate();
+    const nowMonth = thisDate.getMonth() + 1;
+    const nowDate = thisDate.getDate();
     if (nowDate === month && nowMonth === date) {
       setMonth(nowMonth);
     }
@@ -27,7 +40,7 @@ const Header = ({ setMonth, setYear, month, year, date }) => {
         <div className={styles.button}>
           <button onClick={lastMonth}>&lt;</button>
           <button onClick={today}>Today</button>
-          <button onClick={preMonth}>&gt;</button>
+          <button onClick={nextMonth}>&gt;</button>
         </div>
         <div className={styles.now}>
           <div>{`${year}년 ${month}월`}</div>
