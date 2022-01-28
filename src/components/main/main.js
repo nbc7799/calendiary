@@ -1,36 +1,56 @@
-import React, { useState } from "react";
-import styles from "./main.module.css";
+import React, { useEffect, useState } from "react";
+import Body from "../body/body";
+import Header from "../header/header";
 
 const Main = (props) => {
-  let DATE = new Date();
-  const MONTH = DATE.getMonth() + 1;
-  const YEAR = DATE.getFullYear();
-  const date = DATE.getDate();
-  const day = DATE.getDay();
+  let date = new Date();
+  const viewMonth = date.getMonth();
+  const viewYear = date.getFullYear();
 
-  const [month, setMonth] = useState(MONTH);
-  const [yaer, setYear] = useState(YEAR);
+  const [month, setMonth] = useState(viewMonth + 1);
+  const [year, setYear] = useState(viewYear);
+  const [totalDates, setTotalDates] = useState([]);
 
-  const lastMonth = () => {
-    setMonth(month - 1);
-    console.log(month);
+  const makeDates = () => {
+    const lastDate = new Date(year, month - 1, 0).getDate();
+    const lastDay = new Date(year, month - 1, 0).getDay();
+
+    const thisDate = new Date(year, month, 0).getDate();
+    const thisDay = new Date(year, month, 0).getDay();
+
+    const lastDates = [];
+    const thisDates = [...Array(thisDate + 1).keys()].slice(1);
+    const nextDates = [];
+
+    //지난달 날짜그려내기
+    if (lastDay !== 6) {
+      for (let i = 0; i < 6; i++) {
+        lastDates.unshift(lastDate - i);
+      }
+    }
+
+    //다음달 날짜 그려내기
+    for (let i = 1; i < 7 - thisDay; i++) {
+      nextDates.push(i);
+    }
+
+    // dates 합치기
+    return lastDates.concat(thisDates, nextDates);
   };
-  const preMonth = () => {
-    setMonth(month + 1);
-    console.log(month);
-  };
+
+  useEffect(() => {
+    setTotalDates(makeDates());
+  }, []);
+
+  useEffect(() => {
+    setTotalDates(makeDates(month));
+  }, [month]);
 
   return (
-    <div className={styles.header}>
-      <div>
-        <button onClick={lastMonth}>&lt;</button>
-        <button onClick={preMonth}>&gt;</button>
-      </div>
-      <div className={styles.now}>
-        <div>{`${yaer}년`}</div>
-        <div>{`${month}월`}</div>
-      </div>
-    </div>
+    <>
+      <Header makeDates={makeDates} month={month} year={year} />
+      <Body totalDates={totalDates} />
+    </>
   );
 };
 

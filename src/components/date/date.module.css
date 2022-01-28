@@ -1,0 +1,13 @@
+.date {
+  width: calc(100% / 7);
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.date:nth-child(7n + 1) {
+  color: red;
+}
+
+.date:nth-child(7n) {
+  color: blue;
+}

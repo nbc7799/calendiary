@@ -1,0 +1,31 @@
+.body {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.days {
+  display: flex;
+  text-align: center;
+}
+
+.day {
+  width: calc(100% / 7);
+}
+
+.dates {
+  display: flex;
+  flex-flow: wrap;
+  height: 600px;
+  text-align: center;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  width: 100%;
+}
+
+.day:nth-child(7n + 1) {
+  color: red;
+}
+
+.day:nth-child(7n) {
+  color: blue;
+}
