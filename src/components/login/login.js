@@ -9,7 +9,7 @@ const Login = () => {
   const [loginFail, setLoginFail] = useState(false);
   const idRef = useRef();
   const passRef = useRef();
-
+  //ref사용하면 돔을 직접건드리는것
   const showError = () => {
     console.log("아이디나 비밀번호가 틀립니다");
   };

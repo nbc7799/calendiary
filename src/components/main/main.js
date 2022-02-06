@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Body from "../body/body";
 import Header from "../header/header";
+import styles from "./main.module.css";
 
 const Main = (props) => {
   let date = new Date();
@@ -11,6 +12,7 @@ const Main = (props) => {
   const [year, setYear] = useState(viewYear);
   const [totalDates, setTotalDates] = useState([]);
 
+  //날짜 그려내는 함수
   const makeDates = () => {
     const lastDate = new Date(year, month - 1, 0).getDate();
     const lastDay = new Date(year, month - 1, 0).getDay();
@@ -38,16 +40,20 @@ const Main = (props) => {
     return lastDates.concat(thisDates, nextDates);
   };
 
-  useEffect(() => {
-    setTotalDates(makeDates());
-  }, []);
+  const goToday = () => {
+    const nowYear = date.getFullYear();
+    const nowMonth = date.getMonth() + 1;
+    setMonth(nowMonth);
+    setYear(nowYear);
+  };
 
+  // 리렌더발생시 totalDates에 새로운 달 날짜그려서 배열에 담고
   useEffect(() => {
     setTotalDates(makeDates(month));
   }, [month]);
 
   return (
-    <>
+    <div className={styles.main}>
       <Header
         makeDates={makeDates}
         setMonth={setMonth}
@@ -55,9 +61,10 @@ const Main = (props) => {
         year={year}
         setYear={setYear}
         date={date}
+        goToday={goToday}
       />
       <Body totalDates={totalDates} />
-    </>
+    </div>
   );
 };
 

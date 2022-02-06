@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./header.module.css";
 
-const Header = ({ setMonth, setYear, month, year, date }) => {
+const Header = ({ setMonth, setYear, month, year, date, goToday }) => {
   let thisDate = new Date();
 
   const lastMonth = () => {
@@ -23,14 +23,6 @@ const Header = ({ setMonth, setYear, month, year, date }) => {
     }
   };
 
-  const today = () => {
-    const nowMonth = thisDate.getMonth() + 1;
-    const nowDate = thisDate.getDate();
-    if (nowDate === month && nowMonth === date) {
-      setMonth(nowMonth);
-    }
-  };
-
   return (
     <div className={styles.header}>
       <div className={styles.logoBox}>
@@ -39,7 +31,7 @@ const Header = ({ setMonth, setYear, month, year, date }) => {
       <div className={styles.yearMonth}>
         <div className={styles.button}>
           <button onClick={lastMonth}>&lt;</button>
-          <button onClick={today}>Today</button>
+          <button onClick={goToday}>Today</button>
           <button onClick={nextMonth}>&gt;</button>
         </div>
         <div className={styles.now}>
