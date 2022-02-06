@@ -1,7 +1,7 @@
 import React from "react";
 
 const NotFound = () => {
-  return <>404 Not Found</>;
+  return <>여기 아니야 돌아가</>;
 };
 
 export default NotFound;

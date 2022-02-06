@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "./login.module.css";
+import styles from "./SignIn.module.css";
 
-const Login = () => {
+const SignIn = () => {
   const [checkId, setCheckId] = useState("1234");
   const [checkPass, setCheckPass] = useState("1234");
   const [hidePassword, setHidePassword] = useState(true);
@@ -109,4 +109,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignIn;

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Body from "../body/body";
-import Header from "../header/header";
-import styles from "./main.module.css";
+import Body from "../../components/body/body";
+import Header from "../../components/header/header";
+import styles from "./Home.module.css";
 
-const Main = (props) => {
+const Home = () => {
   let date = new Date();
   const viewMonth = date.getMonth();
   const viewYear = date.getFullYear();
@@ -68,4 +68,4 @@ const Main = (props) => {
   );
 };
 
-export default Main;
+export default Home;

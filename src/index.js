@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./index.module.css";
-import Home from "./pages/Home";
-import NotFound from "./pages/NotFound";
-import SignIn from "./pages/SignIn";
-import SignUp from "./pages/SignUp";
+import Home from "./pages/home/Home";
+import SignIn from "./pages/signIn/SignIn";
+import SignUp from "./pages/signUp/SignUp";
+import NotFound from "./pages/notFound/NotFound";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -24,4 +24,4 @@ ReactDOM.render(
 //path : 페이지 이동할 경로
 //exact : path가 정확히 일치할때만 이동(생략가능)
 //component : 어떤 페이지인지 선언
-// render : 커스터마이징가능한 컴포넌트를 함수형태로 선언
+//render : 커스터마이징가능한 컴포넌트를 함수형태로 선언

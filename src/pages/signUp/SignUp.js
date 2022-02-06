@@ -1,9 +1,8 @@
-import styles from "./signUp.module.css";
-
 import React from "react";
 import { Link } from "react-router-dom";
+import styles from "./SignUp.module.css";
 
-const SignUp = (props) => {
+const SignUp = () => {
   return (
     <div className={styles.display}>
       <div className={styles.signBox}>
